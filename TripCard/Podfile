@@ -1,0 +1,7 @@
+platform :ios, '11.0'
+use_frameworks!
+
+target 'TripCard' do
+    project 'TripCard.xcodeproj' 
+    pod 'Parse'
+end
