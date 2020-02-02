@@ -13,25 +13,37 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     @IBOutlet weak var text: UILabel!
     
+    var task: Task?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let tasks = Task.allTasks()
-//        if tasks.count > 0 {
-//            text.text = tasks[0].title
-//
-//        }
-//        print(tasks.count)
+        text.text = "Нет выполняющихся задач"
+        setLabel()
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(openApp)))
     }
     
+    private func setLabel() {
+        let tasks = Task.allTasks()
+        tasks.reversed().forEach { (task) in
+            if TaskStatus(rawValue: task.status) == .inProgress {
+                text.text = task.title
+                self.task = task
+                return
+            }
+        }
+    }
+    
+    @objc private func openApp() {
+        var id = ""
+        if let task = task {
+            id = task.id
+        }
+        self.extensionContext?.open(URL(string: "widgetToApp://\(id)")!, completionHandler: nil)
+    }
         
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-        
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-        
+        setLabel()        
         completionHandler(NCUpdateResult.newData)
     }
     

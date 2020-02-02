@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7418DF1423E709C1001287E2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7418DF1323E709C1001287E2 /* Enums.swift */; };
+		7418DF1523E709CF001287E2 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7418DF1323E709C1001287E2 /* Enums.swift */; };
+		7418DF1623E73CF4001287E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9CA0E23E4163700E3E332 /* AppDelegate.swift */; };
 		742AEC3523E41EC400C5BEA6 /* TasksHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742AEC3423E41EC400C5BEA6 /* TasksHeader.swift */; };
 		742AEC3723E41ED000C5BEA6 /* TasksCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742AEC3623E41ED000C5BEA6 /* TasksCell.swift */; };
 		7461D2E023E48AB2001C3F07 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7461D2DF23E48AB2001C3F07 /* DateExtension.swift */; };
@@ -22,6 +25,7 @@
 		7480072623E4429500A30449 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7480072423E4429500A30449 /* Data.xcdatamodeld */; };
 		7480072923E4435F00A30449 /* Task+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480072723E4435F00A30449 /* Task+CoreDataClass.swift */; };
 		74BC6B0A23E43230005014BC /* DetailedTaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74BC6B0923E43230005014BC /* DetailedTaskController.swift */; };
+		74C0064D23E7032E00626A33 /* CustomPersistantContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C0064C23E7032E00626A33 /* CustomPersistantContainer.swift */; };
 		74E9CA0F23E4163700E3E332 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9CA0E23E4163700E3E332 /* AppDelegate.swift */; };
 		74E9CA1123E4163700E3E332 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9CA1023E4163700E3E332 /* SceneDelegate.swift */; };
 		74E9CA1323E4163700E3E332 /* TasksController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9CA1223E4163700E3E332 /* TasksController.swift */; };
@@ -56,6 +60,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7418DF1323E709C1001287E2 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		742AEC3423E41EC400C5BEA6 /* TasksHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksHeader.swift; sourceTree = "<group>"; };
 		742AEC3623E41ED000C5BEA6 /* TasksCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksCell.swift; sourceTree = "<group>"; };
 		7461D2DF23E48AB2001C3F07 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -70,6 +75,8 @@
 		7480072523E4429500A30449 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		7480072723E4435F00A30449 /* Task+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+CoreDataClass.swift"; sourceTree = "<group>"; };
 		74BC6B0923E43230005014BC /* DetailedTaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedTaskController.swift; sourceTree = "<group>"; };
+		74C0064C23E7032E00626A33 /* CustomPersistantContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPersistantContainer.swift; sourceTree = "<group>"; };
+		74E5020823E5640500C45CF4 /* TaskWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TaskWidget.entitlements; sourceTree = "<group>"; };
 		74E9CA0B23E4163700E3E332 /* TaskTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74E9CA0E23E4163700E3E332 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74E9CA1023E4163700E3E332 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +118,7 @@
 		7461D2E923E490BB001C3F07 /* TaskWidget */ = {
 			isa = PBXGroup;
 			children = (
+				74E5020823E5640500C45CF4 /* TaskWidget.entitlements */,
 				7461D2EA23E490BB001C3F07 /* TodayViewController.swift */,
 				7461D2EC23E490BB001C3F07 /* MainInterface.storyboard */,
 				7461D2EF23E490BB001C3F07 /* Info.plist */,
@@ -184,8 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				74FCDA5823E43548006CAAB5 /* PlaceholderTextView.swift */,
-				747409FB23E45DE10076F4F7 /* CoreDataHelper.swift */,
 				7461D2DF23E48AB2001C3F07 /* DateExtension.swift */,
+				74C0064C23E7032E00626A33 /* CustomPersistantContainer.swift */,
+				747409FB23E45DE10076F4F7 /* CoreDataHelper.swift */,
+				7418DF1323E709C1001287E2 /* Enums.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -320,8 +330,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7418DF1623E73CF4001287E2 /* AppDelegate.swift in Sources */,
 				7461D2EB23E490BB001C3F07 /* TodayViewController.swift in Sources */,
 				7461D2F823E49278001C3F07 /* Task+CoreDataClass.swift in Sources */,
+				7418DF1523E709CF001287E2 /* Enums.swift in Sources */,
 				7461D2F923E4929A001C3F07 /* CoreDataHelper.swift in Sources */,
 				7461D2F723E49274001C3F07 /* Data.xcdatamodeld in Sources */,
 			);
@@ -332,11 +344,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				747409FC23E45DE10076F4F7 /* CoreDataHelper.swift in Sources */,
+				74C0064D23E7032E00626A33 /* CustomPersistantContainer.swift in Sources */,
 				74E9CA1323E4163700E3E332 /* TasksController.swift in Sources */,
 				7480072923E4435F00A30449 /* Task+CoreDataClass.swift in Sources */,
 				74E9CA0F23E4163700E3E332 /* AppDelegate.swift in Sources */,
 				742AEC3723E41ED000C5BEA6 /* TasksCell.swift in Sources */,
 				7480072623E4429500A30449 /* Data.xcdatamodeld in Sources */,
+				7418DF1423E709C1001287E2 /* Enums.swift in Sources */,
 				7461D2E023E48AB2001C3F07 /* DateExtension.swift in Sources */,
 				74E9CA1123E4163700E3E332 /* SceneDelegate.swift in Sources */,
 				74BC6B0A23E43230005014BC /* DetailedTaskController.swift in Sources */,
@@ -386,6 +400,7 @@
 		7461D2F423E490BB001C3F07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TaskWidget/TaskWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QTSV772M5;
 				INFOPLIST_FILE = TaskWidget/Info.plist;
@@ -394,7 +409,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker.TaskWidget2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker2.TaskWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -405,6 +420,7 @@
 		7461D2F523E490BB001C3F07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TaskWidget/TaskWidget.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6QTSV772M5;
 				INFOPLIST_FILE = TaskWidget/Info.plist;
@@ -413,7 +429,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker.TaskWidget2;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker2.TaskWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -543,13 +559,13 @@
 				CODE_SIGN_ENTITLEMENTS = TaskTracker/TaskTracker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W5ZZPB5BG7;
+				DEVELOPMENT_TEAM = 6QTSV772M5;
 				INFOPLIST_FILE = TaskTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -565,13 +581,13 @@
 				CODE_SIGN_ENTITLEMENTS = TaskTracker/TaskTracker.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = W5ZZPB5BG7;
+				DEVELOPMENT_TEAM = 6QTSV772M5;
 				INFOPLIST_FILE = TaskTracker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ios.TaskTracker2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

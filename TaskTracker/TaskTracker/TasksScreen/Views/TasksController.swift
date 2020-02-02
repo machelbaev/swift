@@ -8,16 +8,6 @@
 
 import UIKit
 
-enum TaskType {
-    case new, existed
-}
-
-enum TaskStatus: String {
-    case inProgress = "В процессе"
-    case new = "Новые"
-    case completed = "Выполнено"
-}
-
 class TasksController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!

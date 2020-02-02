@@ -21,10 +21,12 @@ public class Task: NSManagedObject {
     @NSManaged public var title: String
     @NSManaged public var taskDescription: String
     @NSManaged public var status: String
+    @NSManaged public var id: String
     
     convenience init() {
         self.init(entity: Task.entity(), insertInto: CoreDataHelper.instance.context)
         self.date = Date()
+        self.id = UUID().uuidString
     }
     
     convenience init(title: String, taskDescription: String, status: String) {
@@ -42,6 +44,13 @@ public class Task: NSManagedObject {
         } catch {
             return []
         }
+    }
+    
+    class func findById(_ id: String) -> Task {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Task")
+        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        let task = try! CoreDataHelper.instance.context.fetch(fetchRequest).first as! Task
+        return task
     }
     
 }
