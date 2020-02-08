@@ -52,6 +52,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                             <constraints>
                                                 <constraint firstItem="GNP-to-Zwq" firstAttribute="leading" secondItem="6KQ-Wy-Usj" secondAttribute="leadingMargin" id="8C3-Me-7c1"/>
                                                 <constraint firstItem="GNP-to-Zwq" firstAttribute="centerY" secondItem="6KQ-Wy-Usj" secondAttribute="centerY" id="H2t-nX-dsH"/>
@@ -267,8 +268,9 @@
                         <viewLayoutGuide key="safeArea" id="Hw9-eG-U2w"/>
                     </view>
                     <connections>
+                        <outlet property="saveButtonBottowLayout" destination="9Lz-qt-dgh" id="oeK-FB-GaW"/>
                         <outlet property="statusController" destination="els-sZ-TYG" id="azd-ES-CcW"/>
-                        <outlet property="taskDescription" destination="BiG-AD-lPm" id="Pub-39-P4x"/>
+                        <outlet property="taskDescription" destination="BiG-AD-lPm" id="TLb-iS-q5d"/>
                         <outlet property="taskTitle" destination="mYI-OA-Sed" id="LHi-XX-Iab"/>
                     </connections>
                 </viewController>

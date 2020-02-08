@@ -10,6 +10,7 @@ import UIKit
 
 class DetailedTaskController: UIViewController {
     
+    @IBOutlet weak var saveButtonBottowLayout: NSLayoutConstraint!
     @IBOutlet weak var taskTitle: UITextField!
     @IBOutlet weak var taskDescription: PlaceholderTextView! {
         didSet {
@@ -25,6 +26,12 @@ class DetailedTaskController: UIViewController {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         setupStatusController()
         setValues()
+        setupKeyboardObservers()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func setValues() {
@@ -47,6 +54,30 @@ class DetailedTaskController: UIViewController {
     
     private func setupNavigationBar() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "trash"), style: .plain, target: self, action: #selector(deleteTask))
+    }
+    
+    fileprivate func setupKeyboardObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func handleKeyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo!
+        let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        UIView.animate(withDuration: duration) {
+            self.saveButtonBottowLayout.constant = -keyboardFrame.height - 16
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    @objc func handleKeyboardWillHide(notification: Notification) {
+        let userInfo = notification.userInfo!
+        guard let duration = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double else { return }
+        UIView.animate(withDuration: duration) {
+            self.saveButtonBottowLayout.constant = -16 - self.view.safeAreaInsets.bottom
+            self.view.layoutIfNeeded()
+        }
     }
     
     @objc private func deleteTask() {
